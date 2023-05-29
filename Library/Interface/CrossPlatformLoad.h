@@ -13,7 +13,7 @@
     MODULE_HANDLE hModule = dlopen("./libCrossPlatformLib.so", RTLD_NOW | RTLD_GLOBAL);
 #endif
 
-void *gdl_GetProc(const char *pfname)
+void *glo_GetModule(const char *pfname)
 {
    if(hModule)
    {
@@ -29,7 +29,7 @@ void *gdl_GetProc(const char *pfname)
 typedef void (*_VOID_)();
 typedef IMessage *(_IMessage_)(const char* m);
 
-_VOID_ hello = (_VOID_)gdl_GetProc("hello");
-_IMessage_* Message=(_IMessage_ *)gdl_GetProc("NewMessage");
+_VOID_ hello = (_VOID_)glo_GetModule("hello");
+_IMessage_* Message=(_IMessage_ *)glo_GetModule("NewMessage");
 
 #endif
