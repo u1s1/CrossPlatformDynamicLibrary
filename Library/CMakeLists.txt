@@ -21,7 +21,14 @@ add_library(${PROJECT_NAME}
 
 set(IncludePath 
       ./Include
-      ./Interface
-      ../ThirdLib/libxl/inc)
+      ./Interface)
+
+IF(WIN32)
+set(ThirdPath ../ThirdLibWin/libxl/inc)
+ELSE()
+set(ThirdPath ../ThirdLibLinux/libxl/inc)
+ENDIF()
+
+set(AllIncludePath ${IncludePath} ${ThirdPath})
       
-target_include_directories(${PROJECT_NAME} PUBLIC ${IncludePath})
+target_include_directories(${PROJECT_NAME} PUBLIC ${AllIncludePath})

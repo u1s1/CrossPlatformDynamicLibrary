@@ -2,7 +2,7 @@
 #define _EXCEL_H_
 
 #if defined(_WIN32)
-#pragma comment(lib,"../../ThirdLib/libxl/libx64/libxl.lib")
+#pragma comment(lib,"../../ThirdLibWin/libxl/libx64/libxl.lib")
 #endif
 
 #include "IExcel.h"
