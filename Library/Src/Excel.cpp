@@ -15,7 +15,7 @@ Excel::~Excel()
 
 bool Excel::CreateExcel(const char *szExcelPath, const char *strSheet)
 {
-	m_pBook = xlCreateBook();
+	m_pBook = xlCreateXMLBook();
 	if (!m_pBook)
 		return false;
 	const char* x = "Halil Kural";
@@ -31,7 +31,7 @@ bool Excel::CreateExcel(const char *szExcelPath, const char *strSheet)
 
 bool Excel::OpenExcel(const char  *m)
 {
-	m_pBook = xlCreateBook();
+	m_pBook = xlCreateXMLBook();
 	const char* x = "Halil Kural";
 	const char* y = "windows-2723210a07c4e90162b26966a8jcdboe";
 	m_pBook->setKey(x, y);

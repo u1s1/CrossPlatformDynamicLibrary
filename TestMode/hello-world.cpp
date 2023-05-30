@@ -15,7 +15,7 @@ int main() {
   std::cout << face->GetStr() << std::endl;
 
   IExcel *excel = Excel();
-  if(excel->CreateExcel("./create.xls"))
+  if(excel->CreateExcel("./create.xlsx"))
   {
     std::cout << "创建excel成功！" << std::endl;
   }
@@ -23,7 +23,7 @@ int main() {
   {
     std::cout << "创建excel失败！" << std::endl;
   }
-  if(excel->Save("./save.xls"))
+  if(excel->Save("./save.xlsx"))
   {
     std::cout << "保存excel成功！" << std::endl;
   }
@@ -32,7 +32,7 @@ int main() {
     std::cout << "保存excel失败！" << std::endl;
   }
 
-  if(excel->OpenExcel("./testOpen.xls"))
+  if(excel->OpenExcel("./testOpen.xlsx"))
   {
     std::cout << "打开excel成功！" << std::endl;
   }
