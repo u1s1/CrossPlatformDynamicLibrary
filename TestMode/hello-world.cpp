@@ -13,5 +13,41 @@ int main() {
   face->SetStr("我回来了，太阳系");
   face->ShowMsg();
   std::cout << face->GetStr() << std::endl;
+
+  IExcel *excel = Excel();
+  if(excel->CreateExcel("./create.xls"))
+  {
+    std::cout << "创建excel成功！" << std::endl;
+  }
+  else
+  {
+    std::cout << "创建excel失败！" << std::endl;
+  }
+  if(excel->Save("./save.xls"))
+  {
+    std::cout << "保存excel成功！" << std::endl;
+  }
+  else
+  {
+    std::cout << "保存excel失败！" << std::endl;
+  }
+
+  if(excel->OpenExcel("./testOpen.xls"))
+  {
+    std::cout << "打开excel成功！" << std::endl;
+  }
+  else
+  {
+    std::cout << "打开excel失败！" << std::endl;
+  }
+
+  if(excel->Save("./save1.xls"))
+  {
+    std::cout << "保存excel成功！" << std::endl;
+  }
+  else
+  {
+    std::cout << "保存excel失败！" << std::endl;
+  }
   return 0;
 }

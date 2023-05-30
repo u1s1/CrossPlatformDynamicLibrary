@@ -21,6 +21,7 @@ add_library(${PROJECT_NAME}
 
 set(IncludePath 
       ./Include
-      ./Interface)
+      ./Interface
+      ../ThirdLib/libxl/inc)
       
 target_include_directories(${PROJECT_NAME} PUBLIC ${IncludePath})

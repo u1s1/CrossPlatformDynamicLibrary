@@ -11,3 +11,4 @@ TestMode/hello-world
 Library/Bin64
 TestMode/CrossPlatformLib.dll
 TestMode/libCrossPlatformLib.so
+TestMode/libxl.dll
