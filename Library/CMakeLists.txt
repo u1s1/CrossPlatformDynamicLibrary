@@ -19,5 +19,8 @@ add_library(${PROJECT_NAME}
   ${SrcPath}
 )
 
-target_include_directories(${PROJECT_NAME} PUBLIC ./Include)
-target_include_directories(${PROJECT_NAME} PUBLIC ./Interface)
+set(IncludePath 
+      ./Include
+      ./Interface)
+      
+target_include_directories(${PROJECT_NAME} PUBLIC ${IncludePath})
