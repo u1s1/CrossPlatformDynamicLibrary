@@ -26,7 +26,7 @@ set(IncludePath
 IF(WIN32)
 set(ThirdPath ../ThirdLibWin/libxl/inc)
 ELSE()
-set(ThirdPath ../ThirdLibLinux/libxl/inc)
+set(ThirdPath ../ThirdLibLinux/libxl/include_cpp)
 ENDIF()
 
 set(AllIncludePath ${IncludePath} ${ThirdPath})
