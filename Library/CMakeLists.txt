@@ -21,7 +21,8 @@ add_library(${PROJECT_NAME}
 
 set(IncludePath 
       ./Include
-      ./Interface)
+      ./Interface
+)
 
 IF(WIN32)
 set(ThirdPath ../ThirdLibWin/libxl/inc)
@@ -34,7 +35,8 @@ add_library(libxl
 )
 set_target_properties(libxl PROPERTIES
   IMPORTED_LOCATION "${CMAKE_SOURCE_DIR}/../ThirdLibLinux/libxl/lib64/libxl.so"
-  INTERFACE_INCLUDE_DIRECTORIES "${CMAKE_SOURCE_DIR}/../ThirdLibLinux/libxl/include_cpp")
+  INTERFACE_INCLUDE_DIRECTORIES "${CMAKE_SOURCE_DIR}/../ThirdLibLinux/libxl/include_cpp"
+)
 ENDIF()
 
 set(AllIncludePath ${IncludePath} ${ThirdPath})
