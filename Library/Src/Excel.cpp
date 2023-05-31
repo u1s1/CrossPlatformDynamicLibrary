@@ -38,10 +38,14 @@ bool Excel::OpenExcel(const char  *m)
 	return m_pBook->load(m);
 }
 
-const char  *Excel::GetCell(int row, int col)
+const char  *Excel::GetCellStr(int row, int col)
 {
-	libxl::Format **format = 0;
-	return m_pSheet->readStr(row, col, format);
+	return m_pSheet->readStr(row, col);
+}
+
+bool Excel::SetCellStr(int row, int col, const char *m)
+{
+	return m_pSheet->writeStr(row, col, m);
 }
 
 bool Excel::Save(const char  *m){

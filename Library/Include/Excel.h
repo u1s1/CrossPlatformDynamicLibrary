@@ -15,7 +15,8 @@ public:
 	~Excel();
 	bool CreateExcel(const char  *szExcelPath, const char  *strSheet = "sheet1");
 	bool OpenExcel(const char  *m);
-	const char  *GetCell(int row, int col);
+	const char  *GetCellStr(int row, int col);
+	bool SetCellStr(int row, int col, const char *m);
 	bool Save(const char *m);
 
 protected:
