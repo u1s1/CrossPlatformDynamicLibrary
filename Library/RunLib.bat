@@ -18,15 +18,16 @@ if not exist Out (
     rd /S /Q Out
     mkdir Out
 )
+cd Library
 
-xcopy Library\Interface\ Out\Interface\ /e
-copy ThirdLibWin\libxl\binx64\libxl.dll Out\
-copy Library\Bin64\Debug\CrossPlatformLib.dll Out\
+xcopy Interface\ ..\Out\Interface\ /e
+copy ThirdLibWin\libxl\binx64\libxl.dll ..\Out\
+copy Bin64\Debug\CrossPlatformLib.dll ..\Out\
 
-del /S /Q /F Library\Bin64
-rd /S /Q Library\Bin64
+del /S /Q /F Bin64
+rd /S /Q Bin64
 
-del /S /Q /F Library\build
-rd /S /Q Library\build
+del /S /Q /F build
+rd /S /Q build
 
 TIMEOUT /T -1
