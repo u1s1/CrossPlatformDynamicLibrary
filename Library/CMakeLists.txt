@@ -34,8 +34,8 @@ add_library(libxl
   IMPORTED
 )
 set_target_properties(libxl PROPERTIES
-  IMPORTED_LOCATION "./ThirdLibLinux/libxl/lib64/libxl.so"
-  INTERFACE_INCLUDE_DIRECTORIES "./ThirdLibLinux/libxl/include_cpp"
+  IMPORTED_LOCATION "${PROJECT_SOURCE_DIR}/ThirdLibLinux/libxl/lib64/libxl.so"
+  INTERFACE_INCLUDE_DIRECTORIES "${PROJECT_SOURCE_DIR}/ThirdLibLinux/libxl/include_cpp"
 )
 ENDIF()
 
