@@ -1,4 +1,4 @@
-if [ -d "./build/" ]; then   #判断文件夹build是否存在，存在则先删除再创建
+if [ -d "./build/" ]; then
     rm -r build
     mkdir build
 else 
@@ -8,4 +8,21 @@ fi
 cd build
 cmake ..
 cmake --build .
+
+cd ../../
+if [ -d "./Out/" ]; then
+    rm -r Out
+    mkdir Out
+else 
+    mkdir Out
+fi
+cd Library
+
+cp -R ./Interface/ ../Out/
+cp ./Bin64/libCrossPlatformLib.so ../Out/
+mkdir -p ../Out/ThirdLibLinux/libxl/;cp -arf ./ThirdLibLinux/libxl/lib64 ../Out/ThirdLibLinux/libxl/
+
+rm -r ./Bin64
+rm -r ./build
+
 TIMEOUT /T -1

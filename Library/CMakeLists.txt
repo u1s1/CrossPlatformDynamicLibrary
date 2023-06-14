@@ -14,10 +14,37 @@ SET(LIBRARY_OUTPUT_PATH  ${CMAKE_CURRENT_LIST_DIR}/Bin64)
 aux_source_directory( ${CMAKE_CURRENT_SOURCE_DIR}/Src SrcPath)
 
 # generate a library from sources
-add_library(CrossPlatformLib
+add_library(${PROJECT_NAME}
   SHARED
   ${SrcPath}
 )
 
-target_include_directories(CrossPlatformLib PUBLIC ./Include)
-target_include_directories(CrossPlatformLib PUBLIC ./Interface)
+set(IncludePath 
+      ./Include
+      ./Interface
+)
+
+IF(WIN32)
+set(ThirdPath ./ThirdLibWin/libxl/inc)
+ELSE()
+set(ThirdPath ./ThirdLibLinux/libxl/include_cpp)
+
+add_library(libxl
+  SHARED
+  IMPORTED
+)
+set_target_properties(libxl PROPERTIES
+  IMPORTED_LOCATION "${PROJECT_SOURCE_DIR}/ThirdLibLinux/libxl/lib64/libxl.so"
+  INTERFACE_INCLUDE_DIRECTORIES "${PROJECT_SOURCE_DIR}/ThirdLibLinux/libxl/include_cpp"
+)
+ENDIF()
+
+set(AllIncludePath ${IncludePath} ${ThirdPath})
+      
+target_include_directories(${PROJECT_NAME} PUBLIC ${AllIncludePath})
+
+IF(WIN32)
+
+ELSE()
+target_link_libraries(${PROJECT_NAME} libxl)
+ENDIF()

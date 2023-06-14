@@ -11,7 +11,6 @@ public:
     virtual const char* GetStr() = 0;
 };
 
-//导出函数的参数必须是void
 extern "C" CROSS_PLATFORM_API IMessage* NewMessage(const char* m);
 
 #endif     //_IMESSAGE_H_

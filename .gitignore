@@ -11,3 +11,11 @@ TestMode/hello-world
 Library/Bin64
 TestMode/CrossPlatformLib.dll
 TestMode/libCrossPlatformLib.so
+TestMode/libxl.dll
+TestMode/create.xls
+TestMode/save.xls
+TestMode/save1.xls
+TestMode/save.xlsx
+TestMode/create.xlsx
+TestMode/libxl.so
+Out/
