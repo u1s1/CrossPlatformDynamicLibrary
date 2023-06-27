@@ -8,7 +8,7 @@
 #include "IExcel.h"
 #include "libxl.h"
 
-class CROSS_PLATFORM_API Excel : public IExcel
+class Excel : public IExcel
 {
 public:
 	Excel();

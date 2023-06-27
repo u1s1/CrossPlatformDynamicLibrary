@@ -5,7 +5,7 @@
 #include <string>
 #include "IMessage.h"
 
-class CROSS_PLATFORM_API Message : public IMessage{
+class Message : public IMessage{
 public:
   Message(const char* m);
   virtual void ShowMsg();
