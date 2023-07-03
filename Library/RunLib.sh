@@ -10,17 +10,17 @@ cmake ..
 cmake --build .
 
 cd ../../
-if [ -d "./Out/" ]; then
-    rm -r Out
-    mkdir Out
+if [ -d "./CrossPlatformLib/" ]; then
+    rm -r CrossPlatformLib
+    mkdir CrossPlatformLib
 else 
-    mkdir Out
+    mkdir CrossPlatformLib
 fi
 cd Library
 
-cp -R ./Interface/ ../Out/
-cp ./Bin64/libCrossPlatformLib.so ../Out/
-mkdir -p ../Out/ThirdLibLinux/libxl/;cp -arf ./ThirdLibLinux/libxl/lib64 ../Out/ThirdLibLinux/libxl/
+cp -R ./Interface/ ../CrossPlatformLib/
+cp ./Bin64/libCrossPlatformLib.so ../CrossPlatformLib/
+mkdir -p ../CrossPlatformLib/ThirdLibLinux/libxl/;cp -arf ./ThirdLibLinux/libxl/lib64 ../CrossPlatformLib/ThirdLibLinux/libxl/
 
 rm -r ./Bin64
 rm -r ./build

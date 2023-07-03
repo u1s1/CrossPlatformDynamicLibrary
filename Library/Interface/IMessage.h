@@ -11,6 +11,8 @@ public:
     virtual const char* GetStr() = 0;
 };
 
-extern "C" CROSS_PLATFORM_API IMessage* NewMessage(const char* m);
+extern "C" CROSS_PLATFORM_API IMessage* CALLING NewMessage(const char* m);
+
+extern "C" CROSS_PLATFORM_API void CALLING hello();
 
 #endif     //_IMESSAGE_H_

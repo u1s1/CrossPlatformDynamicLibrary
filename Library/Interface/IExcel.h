@@ -13,6 +13,6 @@ public:
     virtual bool Save(const char  *m) = 0;
 };
 
-extern "C" CROSS_PLATFORM_API IExcel* NewExcel();
+extern "C" CROSS_PLATFORM_API IExcel* CALLING NewExcel();
 
 #endif     //_IEXCEL_H_

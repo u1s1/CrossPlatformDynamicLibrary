@@ -1,11 +1,12 @@
 #include <cstdlib>
 #include <iostream>
-#include "../Library/Interface/CrossPlatformLoad.h"
+#include "../CrossPlatformLib/Interface/CrossPlatformLib.h"
+#pragma comment(lib,"../CrossPlatformLib/CrossPlatformLib.lib")
 
 int main() {
   hello();
   
-  IMessage *face = Message("好大的太阳");
+  IMessage *face = NewMessage("好大的太阳");
   face->ShowMsg();
   face->SetStr("再见，太阳系");
   face->ShowMsg();
@@ -14,7 +15,7 @@ int main() {
   face->ShowMsg();
   std::cout << face->GetStr() << std::endl;
 
-  IExcel *excel = Excel();
+  IExcel *excel = NewExcel();
   if(excel->CreateExcel("./create.xlsx"))
   {
     std::cout << "创建excel成功！" << std::endl;
@@ -41,7 +42,7 @@ int main() {
     std::cout << "保存excel失败！" << std::endl;
   }
 
-  IExcel *newExcel = Excel();
+  IExcel *newExcel = NewExcel();
   if(newExcel->OpenExcel("./testOpen.xlsx"))
   {
     std::cout << "打开excel成功！" << std::endl;

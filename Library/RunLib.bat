@@ -11,18 +11,19 @@ cmake ..
 cmake --build .
 
 cd ..\..\
-if not exist Out (
-    mkdir Out
+if not exist CrossPlatformLib (
+    mkdir CrossPlatformLib
 ) else (
-    del /S /Q /F Out
-    rd /S /Q Out
-    mkdir Out
+    del /S /Q /F CrossPlatformLib
+    rd /S /Q CrossPlatformLib
+    mkdir CrossPlatformLib
 )
 cd Library
 
-xcopy Interface\ ..\Out\Interface\ /e
-copy ThirdLibWin\libxl\binx64\libxl.dll ..\Out\
-copy Bin64\Debug\CrossPlatformLib.dll ..\Out\
+xcopy Interface\ ..\CrossPlatformLib\Interface\ /e
+copy ThirdLibWin\libxl\binx64\libxl.dll ..\CrossPlatformLib\
+copy Bin64\Debug\CrossPlatformLib.dll ..\CrossPlatformLib\
+copy Bin64\Debug\CrossPlatformLib.lib ..\CrossPlatformLib\
 
 del /S /Q /F Bin64
 rd /S /Q Bin64

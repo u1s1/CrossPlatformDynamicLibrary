@@ -16,6 +16,4 @@ private:
   const char* message_;
 };
 
-extern "C" CROSS_PLATFORM_API void hello();
-
 #endif     //_MESSAGE_H_
